@@ -38,7 +38,8 @@ IniRead, MaxSpots, %TempConfig%, GuiSettings, MaxSpots
 IniRead, MaxCustom, %TempConfig%, GuiSettings, MaxCustom
 IniRead, MaxCustomKeys, %TempConfig%, GuiSettings, MaxCustomKeys
 StringTrimRight, TempConfig, TempConfig, 4
-guiname := "LoU Helper v1.7 - " . TempConfig
+guiname := "Grumpy old Helper - LoU Helper v1.7 MOD - " . TempConfig
+
 
 ;Get Routine Messages
 IniRead, RoutineMessages, config.ini, ConfigRoutineMessages
@@ -49,15 +50,15 @@ Loop Parse, RoutineMessages, `n
 }
 
 ;Lists of settings to iterate
-Tabs = General|GeneralKeys|Taming|Music|Healing|Hiding|Fishing|Offensive|Lockpicking|Custom|Harvesting|ItemID|ItemTransfer|CustomKeys
+Tabs = General|GeneralKeys|Taming|Music|Healing|Hiding|Fishing|Offensive|Lockpicking|Custom|Harvesting|ItemID|ItemTransfer|DropHarvesting|ToolPull|CustomKeys
 
-GuiSettingsList = MoveCycleCount,MoveToX,MoveToY,MoveFromX,MoveFromY,ItemTransfer,Survey,OnTop,FromName,WinName,AutoRelog,CharNumber,Sens,LagDelay,KeyDelay,Taming,TamingDelay,Release,ReleaseDelay,ReleaseSens,Lore,LoreDelay,Vet,VetDelay,Music,MusicDelay,Peace,PeaceDelay,Provo,ProvoDelay,Discord,DiscordDelay,Bandages,MagicHeal,CurePot,CureSpell,HealingDelay,Hiding,Stealth,Steps,HidingDelay,Fishing,FishingDelay,FishingX1,FishingY1,Fishing2,FishingX2,FishingY2,FishingTotal,Physical,PhysicalDuration,MagicAtk,DoubleTarget,OffensiveDelay,Lockpicking,LockpickDelay,Box1X,Box1Y,Lockpicking2,Box2X,Box2Y,LockpickingSens,ItemID,ItemIDSourceTLX,ItemIDSourceTLY,ItemIDSourceBRX,ItemIDSourceBRY,ItemIDContainerX,ItemIDContainerY,ItemIDSens,ItemIDDelay,CustomRoutineDelay,HarvestingRoutineDelay,HarvestSens
+GuiSettingsList = BarX,BarY,PullBagX,PullBagY,PullFromX,PullFromY,PullToX,PullToY,ToolPull,HarvestLoop,DropCycleCount,DropToX,DropToY,DropFromX,DropFromY,DropHarvesting,MoveCycleCount,MoveToX,MoveToY,MoveFromX,MoveFromY,ItemTransfer,Survey,OnTop,FromName,WinName,AutoRelog,CharNumber,Sens,LagDelay,KeyDelay,Taming,TamingDelay,Release,ReleaseDelay,ReleaseSens,Lore,LoreDelay,Vet,VetDelay,Music,MusicDelay,Peace,PeaceDelay,Provo,ProvoDelay,Discord,DiscordDelay,Bandages,MagicHeal,CurePot,CureSpell,HealingDelay,Hiding,Stealth,Steps,HidingDelay,Fishing,FishingDelay,FishingX1,FishingY1,Fishing2,FishingX2,FishingY2,FishingTotal,Physical,PhysicalDuration,MagicAtk,DoubleTarget,OffensiveDelay,Lockpicking,LockpickDelay,Box1X,Box1Y,Lockpicking2,Box2X,Box2Y,LockpickingSens,ItemID,ItemIDSourceTLX,ItemIDSourceTLY,ItemIDSourceBRX,ItemIDSourceBRY,ItemIDContainerX,ItemIDContainerY,ItemIDSens,ItemIDDelay,CustomRoutineDelay,HarvestingRoutineDelay,HarvestSens
 
 GuiDPSettingsList = BandagesTarget,MagicHealTarget,CurePotTarget,CureSpellTarget,MagicAtkTarget
 
-GuiHotkeysList = SurveyKey,SelfKey,TargetKey,LastKey,SkillKey,SecondKey,NextTargetKey,LastObjectKey,CenterCamKey,BackpackKey,StopKey,StartKey,LeftKey,RightKey,UpKey,DownKey,TamingKey,ReleaseKey,LoreKey,AllKillKey,AllStopKey,MusicKey,PeaceKey,ProvoKey,DiscordKey,BandagesKey,MagicHealKey,CurePotKey,CureSpellKey,HidingKey,FishingKey1,FishingKey2,FishingKey3,FishingKey4,FishingKey5,FishingKey6,FishingKey7,FishingKey8,FishingKey9,PhysicalKey,MagicAtkKey,Box1Key,Box2Key,GlassKey,LockpickKey
+GuiHotkeysList = DropRuneKey,DropSafeSpotKey,SurveyKey,SelfKey,TargetKey,LastKey,SkillKey,SecondKey,NextTargetKey,LastObjectKey,CenterCamKey,BackpackKey,StopKey,StartKey,LeftKey,RightKey,UpKey,DownKey,TamingKey,ReleaseKey,LoreKey,AllKillKey,AllStopKey,MusicKey,PeaceKey,ProvoKey,DiscordKey,BandagesKey,MagicHealKey,CurePotKey,CureSpellKey,HidingKey,FishingKey1,FishingKey2,FishingKey3,FishingKey4,FishingKey5,FishingKey6,FishingKey7,FishingKey8,FishingKey9,PhysicalKey,MagicAtkKey,Box1Key,Box2Key,GlassKey,LockpickKey
 
-GuiLabelsList = MoveCycleCountLabel,MoveToXLabel,MoveToYLabel,MoveFromXLabel,MoveFromYLabel,SurveyLabel,OptionTitle,TabsList,ConfigLabel,ClientNameLabel,FromNameLabel,ToNameLabel,CharNumberLabel,SensLabel,SelfKeyLabel,TargetKeyLabel,LastKeyLabel,LastObjectLabel,SkillKeyLabel,SecondKeyLabel,NextTargetKeyLabel,CenterCamKeyLabel,BackpackKeyLabel,KeyDelayLabel,LagDelayLabel,StopKeyLabel,StartKeyLabel,UpKeyLabel,LeftKeyLabel,DownKeyLabel,RightKeyLabel,TamingKeyLabel,TamingDelayLabel,ReleaseKeyLabel,ReleaseDelayLabel,ReleaseSensLabel,LoreKeyLabel,LoreDelayLabel,AllKillKeyLabel,AllStopKeyLabel,VetDelayLabel,MusicKeyLabel,MusicDelayLabel,PeaceKeyLabel,PeaceDelayLabel,ProvoKeyLabel,ProvoDelayLabel,DiscordKeyLabel,DiscordDelayLabel,BandagesKeyLabel,MagicHealKeyLabel,CurePotLabel,CureSpellLabel,HealingDelayLabel,HidingKeyLabel,HidingDelayLabel,StepsLabel,FishingTotalLabel,FishingDelayLabel,FishingX1Label,FishingY1Label,FishingX2Label,FishingY2Label,FishingKey1Label,FishingKey2Label,FishingKey3Label,FishingKey4Label,FishingKey5Label,FishingKey6Label,FishingKey7Label,FishingKey8Label,FishingKey9Label,PhysicalKeyLabel,PhysicalDurationLabel,MagicAtkKeyLabel,OffensiveDelayLabel,LockpickKeyLabel,LockpickDelayLabel,Box1XLabel,Box1YLabel,Box1KeyLabel,Box2XLabel,Box2YLabel,Box2KeyLabel,LockpickingSensLabel,ItemIDSourceTLXLabel,ItemIDSourceTLYLabel,ItemIDSourceBRXLabel,ItemIDSourceBRYLabel,ItemIDContainerXLabel,ItemIDContainerYLabel,GlassKeyLabel,ItemIDSensLabel,ItemIDDelayLabel,CustomRoutineDelayLabel,HarvestingRoutineDelayLabel,HarvestSensLabel
+GuiLabelsList = BarXLabel,BarYLabel,PullBagXLabel,PullBagYLabel,PullFromXLabel,PullFromYLabel,PullToXLabel,PullToYLabel,HarvestLoopLabel,DropRuneKeyLabel,DropSafeSpotKeyLabel,DropCycleCountLabel,DropToXLabel,DropToYLabel,DropFromXLabel,DropFromYLabel,MoveCycleCountLabel,MoveToXLabel,MoveToYLabel,MoveFromXLabel,MoveFromYLabel,SurveyLabel,OptionTitle,TabsList,ConfigLabel,ClientNameLabel,FromNameLabel,ToNameLabel,CharNumberLabel,SensLabel,SelfKeyLabel,TargetKeyLabel,LastKeyLabel,LastObjectLabel,SkillKeyLabel,SecondKeyLabel,NextTargetKeyLabel,CenterCamKeyLabel,BackpackKeyLabel,KeyDelayLabel,LagDelayLabel,StopKeyLabel,StartKeyLabel,UpKeyLabel,LeftKeyLabel,DownKeyLabel,RightKeyLabel,TamingKeyLabel,TamingDelayLabel,ReleaseKeyLabel,ReleaseDelayLabel,ReleaseSensLabel,LoreKeyLabel,LoreDelayLabel,AllKillKeyLabel,AllStopKeyLabel,VetDelayLabel,MusicKeyLabel,MusicDelayLabel,PeaceKeyLabel,PeaceDelayLabel,ProvoKeyLabel,ProvoDelayLabel,DiscordKeyLabel,DiscordDelayLabel,BandagesKeyLabel,MagicHealKeyLabel,CurePotLabel,CureSpellLabel,HealingDelayLabel,HidingKeyLabel,HidingDelayLabel,StepsLabel,FishingTotalLabel,FishingDelayLabel,FishingX1Label,FishingY1Label,FishingX2Label,FishingY2Label,FishingKey1Label,FishingKey2Label,FishingKey3Label,FishingKey4Label,FishingKey5Label,FishingKey6Label,FishingKey7Label,FishingKey8Label,FishingKey9Label,PhysicalKeyLabel,PhysicalDurationLabel,MagicAtkKeyLabel,OffensiveDelayLabel,LockpickKeyLabel,LockpickDelayLabel,Box1XLabel,Box1YLabel,Box1KeyLabel,Box2XLabel,Box2YLabel,Box2KeyLabel,LockpickingSensLabel,ItemIDSourceTLXLabel,ItemIDSourceTLYLabel,ItemIDSourceBRXLabel,ItemIDSourceBRYLabel,ItemIDContainerXLabel,ItemIDContainerYLabel,GlassKeyLabel,ItemIDSensLabel,ItemIDDelayLabel,CustomRoutineDelayLabel,HarvestingRoutineDelayLabel,HarvestSensLabel
 
 GuiSetButtonsList = LoadedConfig,SetName,SetFishing,SetBox,SetSpotTarget,SetCustomCoordsItem,SetCustomCoordsTarget
 
@@ -103,6 +104,7 @@ Loop, %MaxCustomKeys%
 ;Global GUI settings
 Gui, New, hwndHGUI
 Gui, -MinimizeBox
+Gui, Color, 8F7CB2
 
 ;;GUI elements fixed sizes
 SelectionHeight := 197
@@ -160,6 +162,8 @@ Gui, Add, TreeView, R1 h%SelectionHeight% w%LeftColumnWidth% -0x4 AltSubmit -But
 	P9 := TV_Add("Lockpicking")
 	P10 := TV_Add("Item ID")
 	P11 := TV_Add("Harvesting",,"Expand")
+	P11A := TV_Add("Drop Harvesting",P11)
+	P11B := TV_Add("Tool Pull",P11)
 	Loop, %MaxSpots%
 	{
 		SpotTab = Spot %A_Index%
@@ -643,12 +647,13 @@ Loop, %MaxCustomKeys%
 	Gui, Add, Dropdownlist, xp+85 y%Line5Text% w45 AltSubmit vCustomKeys%A_Index%Key5Mod, |Alt|Ctrl|Shift
 	Gui, Add, Edit, xp+55 y%Line5Text% w%HotkeyWidth% vCustomKeys%A_Index%Key5
 }
+
 ;;ItemTransfer Settings
 Gui, Tab, ItemTransfer
 Gui, Add, Checkbox, x%Left% y%Line1% vItemTransfer, Item Transfer
 ;Item transfer cycles to run
-Gui, Add, Text, xp+85 y%Line1% w30 Right vMoveCycleCountLabel, Move cycles
-Gui, Add, Edit, xp+50 y%Line1% w30 vMoveCycleCount
+Gui, Add, Text, xp+175 y%Line1% w64 Right vMoveCycleCountLabel, Move cycles
+Gui, Add, Edit, xp+77 y%Line1% w30 vMoveCycleCount
 ;Move/drag FROM list location
 Gui, Add, Text, x%Left% y0 w0
 Gui, Add, Text, xp+58 y%Line2% w64 Right vMoveFromXLabel, Move From X
@@ -663,6 +668,69 @@ Gui, Add, Edit, xp+77 y%Line3Text% w%CoordWidth% vMoveToX
 Gui, Add, Text, xp+40 y%Line3% w64 Right vMoveToYLabel, Move To Y
 Gui, Add, Edit, xp+77 y%Line3Text% w%CoordWidth% vMoveToY
 Gui, Add, Button, xp+40 y%Line3Set% w%SetButtonWidth% vSetMoveT gSetMove, Set
+
+;;DropHarvesting Settings
+Gui, Tab, DropHarvesting
+Gui, Add, Checkbox, x%Left% y%Line1% vDropHarvesting, Drop Harvesting
+;Item transfer cycles to run
+Gui, Add, Text, xp+175 y%Line1% w64 Right vDropCycleCountLabel, Move cycles
+Gui, Add, Edit, xp+77 y%Line1% w%CoordWidth% vDropCycleCount
+;Move/drag FROM list location
+Gui, Add, Text, x%Left% y0 w0
+Gui, Add, Text, xp+58 y%Line2% w64 Right vDropFromXLabel, Move From X
+Gui, Add, Edit, xp+77 y%Line2Text% w%CoordWidth% vDropFromX
+Gui, Add, Text, xp+40 y%Line2% w64 Right vDropFromYLabel, Move From Y
+Gui, Add, Edit, xp+77 y%Line2Text% w%CoordWidth% vDropFromY
+Gui, Add, Button, xp+40 y%Line2Set% w%SetButtonWidth% vSetMoveG gSetMove, Set
+;Move/drag TO location
+Gui, Add, Text, x%Left% y0 w0
+Gui, Add, Text, xp+58 y%Line3% w64 Right vDropToXLabel, Move To X
+Gui, Add, Edit, xp+77 y%Line3Text% w%CoordWidth% vDropToX
+Gui, Add, Text, xp+40 y%Line3% w64 Right vDropToYLabel, Move To Y
+Gui, Add, Edit, xp+77 y%Line3Text% w%CoordWidth% vDropToY
+Gui, Add, Button, xp+40 y%Line3Set% w%SetButtonWidth% vSetMoveU gSetMove, Set
+;Drop off and safespot runes
+Gui, Add, Text, x%Left% y0 w0
+Gui, Add, Text, xp+38 y%Line4% w84 Right vDropRuneKeyLabel, Drop Location
+Gui, Add, Edit, xp+97 y%Line4Text% w%CoordWidth% vDropRuneKey
+Gui, Add, Text, xp+40 y%Line4% w64 Right vDropSafeSpotKeyLabel, Safespot
+Gui, Add, Edit, xp+77 y%Line4Text% w%CoordWidth% vDropSafeSpotKey
+;Harvesting loops
+Gui, Add, Text, x%Left% y0 w0
+Gui, Add, Text, xp+38 y%Line5% w84 Right vHarvestLoopLabel, Harvest Loops
+Gui, Add, Edit, xp+97 y%Line5Text% w%CoordWidth% vHarvestLoop
+
+;;ToolPull
+Gui, Tab, ToolPull
+Gui, Add, Checkbox, x%Left% y%Line1% vToolPull, Toolpull
+;Pullbag
+Gui, Add, Text, x%Left% y0 w0
+Gui, Add, Text, xp+58 y%Line1% w64 Right vPullBagXLabel, Pull bag X
+Gui, Add, Edit, xp+77 y%Line1Text% w%CoordWidth% vPullBagX
+Gui, Add, Text, xp+40 y%Line1% w64 Right vPullBagYLabel, Pull bag Y
+Gui, Add, Edit, xp+77 y%Line1Text% w%CoordWidth% vPullbagY
+Gui, Add, Button, xp+40 y%Line1Set% w%SetButtonWidth% vSetMoveH gSetMove, Set
+;Move/drag FROM list location
+Gui, Add, Text, x%Left% y0 w0
+Gui, Add, Text, xp+58 y%Line2% w64 Right vPullFromXLabel, Move From X
+Gui, Add, Edit, xp+77 y%Line2Text% w%CoordWidth% vPullFromX
+Gui, Add, Text, xp+40 y%Line2% w64 Right vPullFromYLabel, Move From Y
+Gui, Add, Edit, xp+77 y%Line2Text% w%CoordWidth% vPullFromY
+Gui, Add, Button, xp+40 y%Line2Set% w%SetButtonWidth% vSetMoveI gSetMove, Set
+;Move/drag TO location
+Gui, Add, Text, x%Left% y0 w0
+Gui, Add, Text, xp+58 y%Line3% w64 Right vPullToXLabel, Move To X
+Gui, Add, Edit, xp+77 y%Line3Text% w%CoordWidth% vPullToX
+Gui, Add, Text, xp+40 y%Line3% w64 Right vPullToYLabel, Move To Y
+Gui, Add, Edit, xp+77 y%Line3Text% w%CoordWidth% vPullToY
+Gui, Add, Button, xp+40 y%Line3Set% w%SetButtonWidth% vSetMoveJ gSetMove, Set
+;Move/drag TO Bar
+Gui, Add, Text, x%Left% y0 w0
+Gui, Add, Text, xp+58 y%Line4% w64 Right vBarXLabel, Bar X
+Gui, Add, Edit, xp+77 y%Line4Text% w%CoordWidth% vBarX
+Gui, Add, Text, xp+40 y%Line4% w64 Right vBarYLabel, Bar Y
+Gui, Add, Edit, xp+77 y%Line4Text% w%CoordWidth% vBarY
+Gui, Add, Button, xp+40 y%Line4Set% w%SetButtonWidth% vSetMoveK gSetMove, Set
 
 Gui, Tab
 ;Routine indicator
@@ -765,6 +833,16 @@ TVLABEL:
 		{
 			GuiControl,, OptionTitle, Item Transfer
 			GuiControl, choose, TabsList, ItemTransfer
+		}
+		else if (A_EventInfo == P11A)
+		{
+			GuiControl,, OptionTitle, Drop Harvesting
+			GuiControl, choose, TabsList, DropHarvesting
+		}
+		else if (A_EventInfo == P11B)
+		{
+			GuiControl,, OptionTitle, Tool Pulling
+			GuiControl, choose, TabsList, ToolPull
 		}
 		Loop, %MaxSpots%
 		{
@@ -1164,6 +1242,18 @@ SETMOVE:
 		SetGuiCoords("MoveFromX","MoveFromY",WinName)
 	else if (CoordType = "T")
 		SetGuiCoords("MoveToX","MoveToY",WinName)
+	else if (CoordType = "G")
+		SetGuiCoords("DropFromX","DropFromY",WinName)
+	else if (CoordType = "U")
+		SetGuiCoords("DropToX","DropToY",WinName)
+	else if (CoordType = "H")
+		SetGuiCoords("PullBagX","PullBagY",WinName)
+	else if (CoordType = "I")
+		SetGuiCoords("PullFromX","PullFromY",WinName)
+	else if (CoordType = "J")
+		SetGuiCoords("PullToX","PullToY",WinName)
+	else if (CoordType = "K")
+		SetGuiCoords("BarX","BarY",WinName)return
 return
 
 ADDCUSTOMTAB:
@@ -1980,17 +2070,75 @@ MAINLOOP:
 				break
 
 		;Harvesting
-		Loop, %MaxSpots% {
-			if (Spot%A_Index%Active)
+		Global c  ;cycle counter
+		Global HarvestLoop
+		c:=0
+		While c < HarvestLoop
+		{
+			Loop, %MaxSpots%
 			{
-				GuiControl,,Routine, %RoutineMessage22% %A_Index%
-				HarvestSpot(WinName, Width, Height, Spot%A_Index%RuneKey, Spot%A_Index%Scroll, Spot%A_Index%ScrollKey, Spot%A_Index%ToolKey, Spot%A_Index%Coords)
-				Harvested := 1
+				if (Spot%A_Index%Active)
+				{
+					GuiControl,,Routine, %RoutineMessage22% %A_Index%
+					HarvestSpot(WinName, Width, Height, Spot%A_Index%RuneKey, Spot%A_Index%Scroll, Spot%A_Index%ScrollKey, Spot%A_Index%ToolKey, Spot%A_Index%Coords)
+					Harvested := 1
+				}
+			}
+			c++
+			Global ToolPull
+			if (ToolPull)
+			{
+				if breakvar = 0
+				{
+					WinActivate, %WinName%
+					Global PullBagX
+					Global PullBagY
+					Global PullFromX
+					Global PullFromY
+					Global PullToX
+					Global PullToY
+					Global BarX
+					Global BarY
+					Sleep 500
+					MouseMove, PullBagX, PullBagY, 0
+					Sleep %LagDelay%
+					Send, {LButton Down}
+					Sleep %LagDelay%
+					Send, {LButton Up}
+					Sleep %LagDelay%
+					Send, {LButton Down}
+					Sleep %LagDelay%
+					Send, {LButton Up}
+					Sleep 1000
+					MouseMove, PullFromX, PullFromY, 0
+					sleep 250
+					Send, {LButton Down}
+					Sleep 250
+					MouseMove, PullToX, PullToY, 0
+					Sleep 250
+					Send, {LButton Up}
+					Sleep 250
+					MouseMove, PullToX, PullToY, 0
+					Sleep 250
+					Send, {LButton Down}
+					Sleep 250
+					MouseMove, BarX, BarY, 0
+					sleep 250
+					Send, {LButton Up}
+					Sleep 250
+					Send, {LButton Down}
+					Sleep 250
+					Send, {LButton Up}
+					Sleep 250
+					Send, {LButton Down
+				}
 			}
 		}
 
 		if (Harvested)
 		{
+			Global DropSafeSpotKey
+			SendHotkey(WinName,DropSafeSpotKey)
 			MsgBox, Harvesting done
 			break
 		}
@@ -2197,6 +2345,30 @@ HarvestSpot(Window, WinWidth, WinHeight, HarvestRuneKey, HarvestScroll, HarvestS
 		}
 		Sleep %LagDelay%
 		i++
+	}
+	Global DropHArvesting
+	if(DropHarvesting)
+	{
+		Global DropRuneKey
+		Global DropCycleCount
+		Global DropFromX
+		Global DropFromY
+		Global DropToX
+		Global DropToY
+		SendHotkey(Window,DropRuneKey)
+		Sleep %HarvestingRoutineDelay%
+		x := 0
+		While (x < DropCycleCount)
+		{
+			Sleep 250
+			MouseMove, DropFromX, DropFromY, 0
+			Send, {LButton Down}
+			Sleep 250
+			MouseMove, DropToX, DropToY, 0
+			Sleep %LagDelay%
+			Send, {LButton Up}
+			x++
+		}
 	}
 	return
 }
